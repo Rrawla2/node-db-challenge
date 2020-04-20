@@ -6,10 +6,10 @@ module.exports =  {
 }
 
 function getAll() {
-    return db("project")
+    return db("task")
 }
 
-function add(project) {
-    return db("project")
-        .insert(project)
+function add(task) {
+    return db("task")
+        .insert(task)
 }
