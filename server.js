@@ -6,6 +6,6 @@ const server = express()
 
 server.use(helmet())
 server.use(express.json())
-server.use('/project', projectRouter)
+server.use('/projects', projectRouter)
 
 module.exports = server;
