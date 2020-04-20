@@ -9,7 +9,12 @@ exports.up = function(knex) {
         table.boolean("complete", false)
             .notNullable()
     })
-    .createTable
+    .createTable("resource", table => {
+        table.increments()
+        table.string("resource_name")
+            .notNullable()
+        table.string("resource_descr", 128)
+    })
 };
 
 exports.down = function(knex) {
