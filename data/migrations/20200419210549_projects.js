@@ -15,14 +15,14 @@ exports.up = function(knex) {
         table.string("resource_name")
             .notNullable()
         table.string("resource_descr", 128)
-        table
-            .integer("project_id")
-            .unsigned()
-            .notNullable()
-            .references("id")
-            .inTable("project")
-            .onUpdate("CASCADE")
-            .onDelete("CASCADE")
+        // table
+        //     .integer("project_id")
+        //     .unsigned()
+        //     .notNullable()
+        //     .references("id")
+        //     .inTable("project")
+        //     .onUpdate("CASCADE")
+        //     .onDelete("CASCADE")
     })
     .createTable("task", table => {
         table.increments()
