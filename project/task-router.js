@@ -14,4 +14,20 @@ router.get("/", (req, res)=> {
         })
 })
 
+router.post("/", (req, res) => {
+    const tasks = req.body
+    
+    Task.add(tasks)
+        .then(task => {
+        if (task) {
+            res.status(201).json(task) 
+        } else {
+            res.status(404).json({ message: "Project ID not found" })
+        }
+    })
+        .catch(err => {
+            res.status(500).json({ message: "Error adding a new task to this project"})
+        })
+})
+
 module.exports = router;
